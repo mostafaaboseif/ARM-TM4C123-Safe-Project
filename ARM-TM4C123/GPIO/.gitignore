@@ -1,0 +1,12 @@
+*.iex
+*.axf
+*.html
+*.crf
+*.d
+*.lnp
+*.map
+*.o
+*.uvopt
+*.uvgui.*
+*.dep
+*.bak

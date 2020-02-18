@@ -3,8 +3,8 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
-C:\Users\mgtmP\Desktop\ARM\ARM-TM4C123-Safe-Project\ARM-TM4C123\GPIO\gpio.uvproj
-Project File Date:  02/17/2020
+C:\Users\mgtmP\Desktop\ARM\ARM-TM4C123-Safe-Project\ARM-TM4C123\GPIO_Driver\gpio.uvproj
+Project File Date:  02/18/2020
 
 <h2>Output:</h2>
 Rebuild target 'Target 1'
@@ -35,106 +35,96 @@ gpio.c(46): warning:  #191-D: type qualifier is meaningless on cast type
         Memory(portAdress, GPIO_PCTL)   = 0x00;
 gpio.c(46): warning:  #191-D: type qualifier is meaningless on cast type
         Memory(portAdress, GPIO_PCTL)   = 0x00;
-gpio.c(89): warning:  #191-D: type qualifier is meaningless on cast type
-        Memory(portAddress, GPIO_LCK) = UNLOCK;
-gpio.c(89): warning:  #191-D: type qualifier is meaningless on cast type
+gpio.c(47): warning:  #191-D: type qualifier is meaningless on cast type
+        Memory(portAdress, GPIO_DIR)            = dir;
+gpio.c(47): warning:  #191-D: type qualifier is meaningless on cast type
+        Memory(portAdress, GPIO_DIR)            = dir;
+gpio.c(90): warning:  #191-D: type qualifier is meaningless on cast type
         Memory(portAddress, GPIO_LCK) = UNLOCK;
 gpio.c(90): warning:  #191-D: type qualifier is meaningless on cast type
+        Memory(portAddress, GPIO_LCK) = UNLOCK;
+gpio.c(91): warning:  #191-D: type qualifier is meaningless on cast type
         Memory(portAddress, GPIO_CR)  |= pin;
-gpio.c(90): warning:  #191-D: type qualifier is meaningless on cast type
+gpio.c(91): warning:  #191-D: type qualifier is meaningless on cast type
         Memory(portAddress, GPIO_CR)  |= pin;
-gpio.c(94): warning:  #191-D: type qualifier is meaningless on cast type
+gpio.c(95): warning:  #191-D: type qualifier is meaningless on cast type
                 Memory(portAddress, GPIO_DEN) |= pin;
-gpio.c(94): warning:  #191-D: type qualifier is meaningless on cast type
+gpio.c(95): warning:  #191-D: type qualifier is meaningless on cast type
                 Memory(portAddress, GPIO_DEN) |= pin;
-gpio.c(96): warning:  #191-D: type qualifier is meaningless on cast type
+gpio.c(97): warning:  #191-D: type qualifier is meaningless on cast type
                 Memory(portAddress, GPIO_AMSEL) |= pin;
-gpio.c(96): warning:  #191-D: type qualifier is meaningless on cast type
+gpio.c(97): warning:  #191-D: type qualifier is meaningless on cast type
                 Memory(portAddress, GPIO_AMSEL) |= pin;
-gpio.c(100): warning:  #191-D: type qualifier is meaningless on cast type
-                Memory(portAddress, GPIO_DIR) |= pin;
-gpio.c(100): warning:  #191-D: type qualifier is meaningless on cast type
+gpio.c(101): warning:  #191-D: type qualifier is meaningless on cast type
                 Memory(portAddress, GPIO_DIR) |= pin;
 gpio.c(101): warning:  #191-D: type qualifier is meaningless on cast type
+                Memory(portAddress, GPIO_DIR) |= pin;
+gpio.c(102): warning:  #191-D: type qualifier is meaningless on cast type
                 Memory(portAddress, GPIO_AFSEL) &= ~(pin);
-gpio.c(101): warning:  #191-D: type qualifier is meaningless on cast type
-                Memory(portAddress, GPIO_AFSEL) &= ~(pin);
-gpio.c(103): warning:  #191-D: type qualifier is meaningless on cast type
-                Memory(portAddress, GPIO_DIR) &= ~(pin);
-gpio.c(103): warning:  #191-D: type qualifier is meaningless on cast type
-                Memory(portAddress, GPIO_DIR) &= ~(pin);
-gpio.c(104): warning:  #191-D: type qualifier is meaningless on cast type
+gpio.c(102): warning:  #191-D: type qualifier is meaningless on cast type
                 Memory(portAddress, GPIO_AFSEL) &= ~(pin);
 gpio.c(104): warning:  #191-D: type qualifier is meaningless on cast type
+                Memory(portAddress, GPIO_DIR) &= ~(pin);
+gpio.c(104): warning:  #191-D: type qualifier is meaningless on cast type
+                Memory(portAddress, GPIO_DIR) &= ~(pin);
+gpio.c(105): warning:  #191-D: type qualifier is meaningless on cast type
                 Memory(portAddress, GPIO_AFSEL) &= ~(pin);
-gpio.c(106): warning:  #191-D: type qualifier is meaningless on cast type
+gpio.c(105): warning:  #191-D: type qualifier is meaningless on cast type
+                Memory(portAddress, GPIO_AFSEL) &= ~(pin);
+gpio.c(107): warning:  #191-D: type qualifier is meaningless on cast type
                 Memory(portAddress, GPIO_AFSEL) |= (pin);
-gpio.c(106): warning:  #191-D: type qualifier is meaningless on cast type
+gpio.c(107): warning:  #191-D: type qualifier is meaningless on cast type
                 Memory(portAddress, GPIO_AFSEL) |= (pin);
-gpio.c(113): warning:  #191-D: type qualifier is meaningless on cast type
+gpio.c(114): warning:  #191-D: type qualifier is meaningless on cast type
         Memory(portAddress, GPIO_PUR) |= pin;
-gpio.c(113): warning:  #191-D: type qualifier is meaningless on cast type
+gpio.c(114): warning:  #191-D: type qualifier is meaningless on cast type
         Memory(portAddress, GPIO_PUR) |= pin;
-gpio.c(116): warning:  #191-D: type qualifier is meaningless on cast type
+gpio.c(117): warning:  #191-D: type qualifier is meaningless on cast type
         Memory(portAddress, GPIO_PDR) |= pin;
-gpio.c(116): warning:  #191-D: type qualifier is meaningless on cast type
+gpio.c(117): warning:  #191-D: type qualifier is meaningless on cast type
         Memory(portAddress, GPIO_PDR) |= pin;
-gpio.c(119): warning:  #191-D: type qualifier is meaningless on cast type
+gpio.c(120): warning:  #191-D: type qualifier is meaningless on cast type
         Memory(portAddress, GPIO_DRV2M) |= pin;
-gpio.c(119): warning:  #191-D: type qualifier is meaningless on cast type
+gpio.c(120): warning:  #191-D: type qualifier is meaningless on cast type
         Memory(portAddress, GPIO_DRV2M) |= pin;
-gpio.c(122): warning:  #191-D: type qualifier is meaningless on cast type
+gpio.c(123): warning:  #191-D: type qualifier is meaningless on cast type
         Memory(portAddress, GPIO_DRV4M) |= pin;
-gpio.c(122): warning:  #191-D: type qualifier is meaningless on cast type
+gpio.c(123): warning:  #191-D: type qualifier is meaningless on cast type
         Memory(portAddress, GPIO_DRV4M) |= pin;
-gpio.c(125): warning:  #191-D: type qualifier is meaningless on cast type
+gpio.c(126): warning:  #191-D: type qualifier is meaningless on cast type
         Memory(portAddress, GPIO_DRV8M) |= pin;
-gpio.c(125): warning:  #191-D: type qualifier is meaningless on cast type
+gpio.c(126): warning:  #191-D: type qualifier is meaningless on cast type
         Memory(portAddress, GPIO_DRV8M) |= pin;
-gpio.c(130): warning:  #191-D: type qualifier is meaningless on cast type
+gpio.c(131): warning:  #191-D: type qualifier is meaningless on cast type
         Memory(portAddress, registerName) |= pin;
-gpio.c(130): warning:  #191-D: type qualifier is meaningless on cast type
+gpio.c(131): warning:  #191-D: type qualifier is meaningless on cast type
         Memory(portAddress, registerName) |= pin;
-gpio.c(133): warning:  #191-D: type qualifier is meaningless on cast type
+gpio.c(134): warning:  #191-D: type qualifier is meaningless on cast type
         Memory(portAddress, registerName) &= ~(pin);
-gpio.c(133): warning:  #191-D: type qualifier is meaningless on cast type
+gpio.c(134): warning:  #191-D: type qualifier is meaningless on cast type
         Memory(portAddress, registerName) &= ~(pin);
-gpio.c(138): warning:  #191-D: type qualifier is meaningless on cast type
+gpio.c(139): warning:  #191-D: type qualifier is meaningless on cast type
         return Memory(portAddress, PORT_OFFSET);
-gpio.c(138): warning:  #191-D: type qualifier is meaningless on cast type
+gpio.c(139): warning:  #191-D: type qualifier is meaningless on cast type
         return Memory(portAddress, PORT_OFFSET);
-gpio.c(141): warning:  #191-D: type qualifier is meaningless on cast type
+gpio.c(142): warning:  #191-D: type qualifier is meaningless on cast type
         Memory(portAddress, PORT_OFFSET) = value;
-gpio.c(141): warning:  #191-D: type qualifier is meaningless on cast type
+gpio.c(142): warning:  #191-D: type qualifier is meaningless on cast type
         Memory(portAddress, PORT_OFFSET) = value;
-gpio.c(146): warning:  #191-D: type qualifier is meaningless on cast type
+gpio.c(147): warning:  #191-D: type qualifier is meaningless on cast type
         return Memory(portAddress, PORT_OFFSET) & pin;
-gpio.c(146): warning:  #191-D: type qualifier is meaningless on cast type
+gpio.c(147): warning:  #191-D: type qualifier is meaningless on cast type
         return Memory(portAddress, PORT_OFFSET) & pin;
-gpio.c(149): warning:  #191-D: type qualifier is meaningless on cast type
+gpio.c(150): warning:  #191-D: type qualifier is meaningless on cast type
         Memory(portAddress, pin) = value;
-gpio.c(149): warning:  #191-D: type qualifier is meaningless on cast type
+gpio.c(150): warning:  #191-D: type qualifier is meaningless on cast type
         Memory(portAddress, pin) = value;
-gpio.c: 52 warnings, 0 errors
+gpio.c: 54 warnings, 0 errors
 linking...
-Program Size: Code=1528 RO-data=636 RW-data=0 ZI-data=608  
-".\gpio.axf" - 0 Error(s), 52 Warning(s).
-Load "C:\\Users\\mgtmP\\Desktop\\ARM\\ARM-TM4C123-Safe-Project\\ARM-TM4C123\\GPIO\\gpio.axf" 
-Connecting: Mode=JTAG, Speed=1000000Hz
-Erase Done.
-Programming Done.
-Verify OK.
+Program Size: Code=1552 RO-data=636 RW-data=0 ZI-data=608  
+".\gpio.axf" - 0 Error(s), 54 Warning(s).
 </pre>
 </body>
 </html>
-pio.axf" - 0 Error(s), 54 Warning(s).
-Load "C:\\Users\\mgtmP\\Desktop\\ARM\\ARM-TM4C123-Safe-Project\\ARM-TM4C123\\GPIO\\gpio.axf" 
-Connecting: Mode=JTAG, Speed=1000000Hz
-Erase Done.
-Programming Done.
-Verify OK.
-\ARM-TM4C123\\GPIO\\gpio.axf" 
-Connecting: Mode=JTAG, Speed=1000000Hz
-Erase Done.
-Programming Done.
-Verify OK.
+1 Error(s), 54 Warning(s).
+Target not created

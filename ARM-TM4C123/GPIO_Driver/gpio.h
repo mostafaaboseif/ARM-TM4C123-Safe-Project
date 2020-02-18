@@ -21,8 +21,8 @@
 	
 #define UNLOCK					0x4C4F434B
 #define PORT_OFFSET			0x3FC
-#define HIGH						1
-#define LOW							0
+#define HIGH						0xFF
+#define LOW							0x00
 
 #define Memory(X,Y)			(*((volatile uint32_t*)(((volatile uint32_t)X)+((volatile uint32_t)Y))))
 
@@ -71,12 +71,12 @@ typedef enum PinMode{
 } PinMode;
 
 typedef enum PinDir{
-	INPUT			,
-	OUTPUT		,
+	INPUT			 = 0x00,
+	OUTPUT		 = 0xFF,
 	PERIPHERAL,
 } PinDir;
 
-void 		gpio_init_port(volatile uint32_t portAddre8ss);
+void 		gpio_init_port(volatile uint32_t portAddress, PinDir dir);
 void 		gpio_init_pin(volatile uint32_t portAddress, Pin pin, PinMode mode, PinDir dir);
 
 void 		gpio_set_pullup(volatile uint32_t portAddress, Pin pin);

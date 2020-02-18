@@ -1,6 +1,6 @@
 #include "gpio.h"
 
-void gpio_init_port(volatile uint32_t portAdress){
+void gpio_init_port(volatile uint32_t portAdress, PinDir dir){
 	switch(portAdress){
 		case PORTA_AHB:
 		case PORTA_APB:
@@ -44,6 +44,7 @@ void gpio_init_port(volatile uint32_t portAdress){
 	Memory(portAdress, GPIO_AMSEL)	= 0x00;
 	Memory(portAdress, GPIO_AFSEL) 	= 0x00;
 	Memory(portAdress, GPIO_PCTL) 	= 0x00;
+	Memory(portAdress, GPIO_DIR) 		= dir;
 }
 
 

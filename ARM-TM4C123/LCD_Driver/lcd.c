@@ -21,18 +21,7 @@ void delayUs(int n)
 }
 <<<<<<< HEAD
 =======
-void LCD_RowCol(unsigned int row, unsigned int col)
-{
 
-  if( row == 0)
-  {
-    command = 0x80;
-   If(col <=  0x0F && col >= 0x00)
-    {
-      LCD_command(command + col);
-      break;
-    }
-  }
 	
 
 void LCD_command(unsigned char command){

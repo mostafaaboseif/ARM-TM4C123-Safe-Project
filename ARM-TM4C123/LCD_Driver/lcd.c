@@ -10,6 +10,7 @@ void delayMs(int n)
  {} /* do nothing for 1 ms */
 }
 /* delay n microseconds (16 MHz CPU clock) */
+
 void delayUs(int n)
 {
  int i, j;
@@ -17,6 +18,19 @@ void delayUs(int n)
  for(j = 0; j < 3; j++)
  {} /* do nothing for 1 us */
 }
+void LCD_RowCol(unsigned int row, unsigned int col)
+{
+
+  if( row == 0)
+  {
+    command = 0x80;
+   If(col <=  0x0F && col >= 0x00)
+    {
+      LCD_command(command + col);
+      break;
+    }
+  }
+	
 
 void LCD_command(unsigned char command){
 		GPIOA->DATA = 0;

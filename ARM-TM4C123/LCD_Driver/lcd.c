@@ -81,6 +81,6 @@ void LCD_writeInteger(int number){
 }
 
 void LCD_clearScreen(){
-	LCD_writeCommand(0x80);
+	LCD_writeCommand(0x01);
 }
 #endif

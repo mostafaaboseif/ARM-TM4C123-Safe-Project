@@ -11,6 +11,7 @@ void delayMs(int n)
  {} /* do nothing for 1 ms */
 }
 /* delay n microseconds (16 MHz CPU clock) */
+
 void delayUs(int n)
 {
  int i, j;
@@ -18,6 +19,47 @@ void delayUs(int n)
  for(j = 0; j < 3; j++)
  {} /* do nothing for 1 us */
 }
+<<<<<<< HEAD
+=======
+void LCD_RowCol(unsigned int row, unsigned int col)
+{
+
+  if( row == 0)
+  {
+    command = 0x80;
+   If(col <=  0x0F && col >= 0x00)
+    {
+      LCD_command(command + col);
+      break;
+    }
+  }
+	
+
+void LCD_command(unsigned char command){
+		GPIOA->DATA = 0;
+		GPIOB->DATA = command;
+		//3shan ne3mel 7war l high wel low hanconfigure pin 7
+		GPIOA->DATA= 0x80;
+		delayMs(0);
+		GPIOA->DATA= 0;
+		delayUs(0);
+		GPIOA->DATA = 0;
+		if (command < 4)
+		delayUs(2); /* command 1 and 2 needs up to 1.64ms */
+		else
+		delayUs(40);
+}
+void LCD_data(unsigned char data){
+		GPIOA->DATA =0x20;
+		GPIOB->DATA = data;
+			//3shan ne3mel 7war l high wel low hanconfigure pin 7
+		GPIOA->DATA = 0xA0;
+		delayUs(0);
+		GPIOA->DATA = 0;
+		delayUs(40);
+
+}
+>>>>>>> 49147ee2a2cbf0606b3bebdfd06e27f65f2a1851
 void LCD_init(void){
 	GPIO_initPort(PORTA,OUTPUT);
 	GPIO_initPin(PORTA,PIN5,DIGITAL,OUTPUT);

@@ -10,3 +10,4 @@ void LCD_writeChar(unsigned char data);
 void LCD_writeString( char* str);
 void LCD_writeInteger(int number);
 void LCD_clearScreen();
+void LCD_rowCol(unsigned int row, unsigned int col);

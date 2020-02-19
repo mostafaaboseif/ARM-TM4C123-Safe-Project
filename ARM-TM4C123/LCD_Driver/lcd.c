@@ -2,6 +2,14 @@
 #define LCD_H
 #include "lcd.h"
 
+#define CLEAR 										0x01
+#define RETURN_CURSOR 						0x02
+#define INCREMENT_CURSOR 					0x06
+#define BLINK_CURSOR 							0x0F
+#define CURSOR_BEGIN_FIRST_LINE		0x80
+#define CURSOR_BEGIN_SECOND_LINE	0xC0
+
+
 
 void delayMs(int n)
 {
@@ -19,21 +27,15 @@ void delayUs(int n)
  {} /* do nothing for 1 us */
 }
 void LCD_init(void){
+	
 	GPIO_initPort(PORTA,OUTPUT);
 	GPIO_initPin(PORTA,PIN5,DIGITAL,OUTPUT);
 	GPIO_initPin(PORTA,PIN6,DIGITAL,OUTPUT);
 	GPIO_initPin(PORTA,PIN7,DIGITAL,OUTPUT);
 	
+	//Writing data on PORTB PB0~PB7
 	GPIO_initPort(PORTB,OUTPUT);
-//	GPIO_initPin(PORTB,PIN0,DIGITAL,OUTPUT);
-//	GPIO_initPin(PORTB,PIN1,DIGITAL,OUTPUT);
-//	GPIO_initPin(PORTB,PIN2,DIGITAL,OUTPUT);
-//	GPIO_initPin(PORTB,PIN3,DIGITAL,OUTPUT);
-//	GPIO_initPin(PORTB,PIN4,DIGITAL,OUTPUT);
-//	GPIO_initPin(PORTB,PIN5,DIGITAL,OUTPUT);
-//	GPIO_initPin(PORTB,PIN6,DIGITAL,OUTPUT);
-//	GPIO_initPin(PORTB,PIN7,DIGITAL,OUTPUT);
-//	
+
 	delayMs(20); 
 	LCD_writeCommand(0x30);
 	delayMs(5);
@@ -49,7 +51,7 @@ void LCD_init(void){
 void LCD_writeCommand(unsigned char command){
 			GPIO_writePort(PORTA,0);
 			GPIO_writePort(PORTB,command);
-			GPIO_writePort(PORTA,0x80);
+			GPIO_writePort(PORTA,CURSOR_BEGIN_FIRST_LINE);
 			delayMs(0);
 			GPIO_writePort(PORTA,0);
 			delayUs(0);
@@ -60,7 +62,7 @@ void LCD_writeCommand(unsigned char command){
 			delayUs(40);
 }
 void LCD_writeChar(unsigned char data){
-			GPIO_writePort(PORTA,0x20);
+			GPIO_writePort(PORTA,RETURN_CURSOR);
 			GPIO_writePort(PORTB,data);
 			GPIO_writePort(PORTA,0xA0);
 			delayUs(0);
@@ -81,6 +83,15 @@ void LCD_writeInteger(int number){
 }
 
 void LCD_clearScreen(){
-	LCD_writeCommand(0x01);
+	LCD_writeCommand(CLEAR);
 }
+//void LCD_rowColor(unsigned int row, unsigned int col){
+//if(row==0){
+//command = 0x80;
+//	if (col <=0x0F && col >=0x00){
+//	LCD_writeCommand(command + col);
+//		break;
+//	}
+//}
+//}
 #endif

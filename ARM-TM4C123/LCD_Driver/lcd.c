@@ -85,13 +85,29 @@ void LCD_writeInteger(int number){
 void LCD_clearScreen(){
 	LCD_writeCommand(CLEAR);
 }
-//void LCD_rowColor(unsigned int row, unsigned int col){
-//if(row==0){
-//command = 0x80;
-//	if (col <=0x0F && col >=0x00){
-//	LCD_writeCommand(command + col);
-//		break;
-//	}
-//}
-//}
+
+void LCD_RowCol(uint32_t row, uint32_t col)
+{
+
+  if( row == 0)
+  {
+    char command = 0x80;
+   while (col <=  0x0F )
+    {
+      LCD_command(command + col);
+      break;
+    }
+	}
+		if( row == 1)
+  {
+    char command = 0xC0;
+   while (col <=  0x0F )
+    {
+      LCD_command(command + col);
+      break;
+    }
+		
+  }
+}	
+
 #endif

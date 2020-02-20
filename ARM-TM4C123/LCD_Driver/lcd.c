@@ -2,10 +2,10 @@
 #define LCD_H
 #include "lcd.h"
 
-#define CLEAR 										0x01
-#define RETURN_CURSOR 						0x02
-#define INCREMENT_CURSOR 					0x06
-#define BLINK_CURSOR 							0x0F
+#define CLEAR 				0x01
+#define RETURN_CURSOR 			0x02
+#define INCREMENT_CURSOR 		0x06
+#define BLINK_CURSOR 			0x0F
 #define CURSOR_BEGIN_FIRST_LINE		0x80
 #define CURSOR_BEGIN_SECOND_LINE	0xC0
 

@@ -2,6 +2,7 @@
 #define _GPIO_DRIVER_H
 
 #include <stdint.h>
+#include "C:\Users\mgtmP\Desktop\ARM\walkArround\tm4c123gh6pm.h"
 #include <math.h>
 
 #define PORTA					0x40004000
@@ -19,7 +20,8 @@
 	
 #define SYSCTL_PRGPIO   		((volatile uint32_t*)0x400FEA08)
 #define SYSCTL_RCGCGPIO 		((volatile uint32_t*)0x400FE608)
-#define NVIC_EN0                ((volatile uint32_t *)0xE000E100)
+#define NVIC_EN0            ((volatile uint32_t*)0xE000E100)
+#define RCGC2_REG				    ((volatile uint32_t *)0x400FE108)	// really don't know why we are using this
 
 #define UNLOCK					0x4C4F434B
 #define PORT_OFFSET				0x3FC
@@ -30,9 +32,9 @@
 #define Log(X)					(int)log2(X)
 
 #define I2C_F						0x03
+#define UART_F					0x02
 
-
-typedef enum RegistersOffset{
+typedef enum GPIORegistersOffset{
 	GPIO_DIR 			= 0x400,
 	GPIO_IS 			= 0x404,
 	GPIO_IBE 			= 0x408,
@@ -54,7 +56,7 @@ typedef enum RegistersOffset{
 	GPIO_CR				= 0x524,
 	GPIO_AMSEL			= 0x528,
 	GPIO_PCTL			= 0x52C
-} RegistersOffset;
+} GPIORegistersOffset;
 
 typedef enum Pin{
 	PIN0				= 0x001,
@@ -104,7 +106,7 @@ void 	GPIO_setOpenDrain(volatile uint32_t portAddress, Pin pin);
 void 	GPIO_set_drive2m(volatile uint32_t portAddress, Pin pin);
 void 	GPIO_set_drive4m(volatile uint32_t portAddress, Pin pin);
 void 	GPIO_set_drive8m(volatile uint32_t portAddress, Pin pin);
-void 	GPIO_set_register(volatile uint32_t portAddress, Pin pin, RegistersOffset registerName);
-void 	GPIO_clear_register(volatile uint32_t portAddress, Pin pin, RegistersOffset registerName);
+void 	GPIO_set_register(volatile uint32_t portAddress, Pin pin, GPIORegistersOffset registerName);
+void 	GPIO_clear_register(volatile uint32_t portAddress, Pin pin, GPIORegistersOffset registerName);
 
 #endif

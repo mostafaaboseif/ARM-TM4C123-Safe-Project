@@ -6,36 +6,42 @@ void GPIO_setClkSource(volatile uint32_t portAddress){
 	switch(portAddress){
 		case PORTA_AHB:
 		case PORTA:
+			(*RCGC2_REG) |= 0x01;
 			(*SYSCTL_RCGCGPIO) |= 0x01;
 			while(!((*SYSCTL_PRGPIO)|= 0x01));
 			break;
 		
 		case PORTB_AHB:
 		case PORTB:
+			(*RCGC2_REG) |= 0x02;
 			(*SYSCTL_RCGCGPIO) |= 0x02;
 			while(!((*SYSCTL_PRGPIO)|= 0x02));
 			break;
 		
 		case PORTC_AHB:
 		case PORTC:
+			(*RCGC2_REG) |= 0x04;
 			(*SYSCTL_RCGCGPIO) |= 0x04;
-			while(!((*SYSCTL_PRGPIO)|= 0x04));
+			while(!((*SYSCTL_PRGPIO)&0x00000004));
 			break;
 		
 		case PORTD_AHB:
 		case PORTD:
+			(*RCGC2_REG) |= 0x08;
 			(*SYSCTL_RCGCGPIO) |= 0x08;
 			while(!((*SYSCTL_PRGPIO)|= 0x08));
 			break;
 		
 		case PORTE_AHB:
 		case PORTE:
+			(*RCGC2_REG) |= 0x10;
 			(*SYSCTL_RCGCGPIO) |= 0x10;
 			while(!((*SYSCTL_PRGPIO)|= 0x10));
 			break;
 		
 		case PORTF_AHB:
 		case PORTF:
+			(*RCGC2_REG) |= 0x20;
 			(*SYSCTL_RCGCGPIO) |= 0x20;
 			while(!((*SYSCTL_PRGPIO)|= 0x20));
 			break;
@@ -48,7 +54,9 @@ void GPIO_initPin(volatile uint32_t portAddress, Pin pin, PinMode mode, PinDir d
 	Memory(portAddress, GPIO_CR)  |= pin;	
 	if(mode == DIGITAL){
 		Memory(portAddress, GPIO_DEN) |= pin;
+		Memory(portAddress, GPIO_AMSEL) &= ~(pin);
 	}else{
+		Memory(portAddress, GPIO_DEN) &= ~(pin);
 		Memory(portAddress, GPIO_AMSEL) |= pin;
 	}
 	if(dir == OUTPUT){
@@ -192,8 +200,7 @@ void GPIO_setPulldown(volatile uint32_t portAddress, Pin pin){
 
 
 void GPIO_setPCTL(volatile uint32_t portAddress, Pin pin, uint8_t function){
-	Memory(portAddress, GPIO_PCTL) &= ~(0x0f << (pin << 2));
-	Memory(portAddress, GPIO_PCTL) |= (function << (pin << 2));
+	Memory(portAddress, GPIO_PCTL) = (Memory(portAddress, GPIO_PCTL) & (~(0x0000000F << (Log(pin)*4))))|(function << ((Log(pin)*4)));
 }
 
 void GPIO_setOpenDrain(volatile uint32_t portAddress, Pin pin){
@@ -210,10 +217,10 @@ void GPIO_set_drive8m(volatile uint32_t portAddress, Pin pin){
 	Memory(portAddress, GPIO_DRV8M) |= pin;
 }
 
-void GPIO_set_register(volatile uint32_t portAddress, Pin pin, RegistersOffset registerName){
+void GPIO_set_register(volatile uint32_t portAddress, Pin pin, GPIORegistersOffset registerName){
 	Memory(portAddress, registerName) |= pin;
 }
-void GPIO_clear_register(volatile uint32_t portAddress, Pin pin, RegistersOffset registerName){
+void GPIO_clear_register(volatile uint32_t portAddress, Pin pin, GPIORegistersOffset registerName){
 	Memory(portAddress, registerName) &= ~(pin);
 }
 

@@ -2,16 +2,19 @@
 #ifndef _UART_H
 #define _UART_H
 
-#include "stdint.h"
+#include <stdint.h>
 #include "gpio.h"
-#include "string.h"
+#include <string.h>
+#include <stdlib.h>
 
-#define CLK_SPEED				50000000
-#define Memory(X,Y)			(*((volatile uint32_t*)(((uint32_t)X)+((uint32_t)Y))))
-#define BAUD_IDIV(B)		(int)(CLK_SPEED/(16*B))
-#define BAUD_FDIV(B) 		(int)(((CLK_SPEED/(16*B)) - BAUD_IDIV(B))*64)
-#define UART_CLK				((volatile uint32_t *)0x400FE618)
-#define RCGC2_REG				((volatile uint32_t *)0x400FE108)	//really don't know why we are using this
+#define CLK_SPEED				 	50000000
+#define UART_BUFFER_SIZE 	64
+#define Memory(X,Y)			 	(*((volatile uint32_t*)(((uint32_t)X)+((uint32_t)Y))))
+#define BAUD_IDIV(B)		 	(int)(CLK_SPEED/(16*B))
+#define BAUD_FDIV(B) 		 	(int)(((CLK_SPEED/(16*B)) - BAUD_IDIV(B))*64)
+#define UART_CLK				 	((volatile uint32_t *)0x400FE618)
+#define RCGC2_REG				 	((volatile uint32_t *)0x400FE108)	//really don't know why we are using this
+#define NVIC_EN0         	((volatile uint32_t*)0xE000E100)
 
 typedef enum Uart{
 	UART0 			= 0x4000C000,
@@ -59,6 +62,9 @@ void UART_Init(Uart uart, UART_BAUDRATE baudrate);
 uint8_t UART_readChar(Uart uart);
 void UART_sendChar(Uart uart, const char data);
 void UART_sendString(Uart uart, const char *data);
-void UART_sendByteStream(Uart uart, const uint8_t *data);
-void UART_attachToBuffer(Uart uart);
+void UART_sendByteStream(Uart uart, const uint8_t *data, const uint8_t size);
+void UART_attachBuffer(Uart uart);
+void UART_interruptHandler(Uart uart);
+void UART_readString(char *dest);
+uint8_t UART_bufferAvailable();
 #endif

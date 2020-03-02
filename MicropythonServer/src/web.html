@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>Page Title</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' type='text/css' media='screen' href='w3.css'>
+    </head>
+    <body>
+        <div class="w3-container">
+            <button class="w3-button w3-red" id="redButton">Red</button>
+            <button class="w3-button w3-green" id="greenButton">Green</button>
+            <button class="w3-button w3-blue" id="blueButton">Blue</button>
+            <button class="w3-button w3-cyan" id="cyanButton">Cyan</button>
+            <button class="w3-button w3-yellow" id="yellowButton">Yellow</button>
+            <button class="w3-button w3-white" id="whiteButton">White</button>
+            <button class="w3-button w3-purple" id="purpleButton">Purple</button>
+        </div>
+    </body>
+    <script>
+        function send(button){
+            var xhttp = new XMLHttpRequest();
+            xhttp.open("GET", "test?button="+button, true);
+            xhttp.send();
+        }
+        document.getElementById('redButton').onclick = function() {
+            send("red");
+        }
+        document.getElementById('greenButton').onclick = function() {
+            send("green");
+        }
+        document.getElementById('blueButton').onclick = function() {
+            send("blue");
+        }
+        document.getElementById('whiteButton').onclick = function() {
+            send("white");
+        }
+        document.getElementById('purpleButton').onclick = function() {
+            send("purple");
+        }
+        document.getElementById('yellowButton').onclick = function() {
+            send("yellow");
+        }
+        document.getElementById('cyanButton').onclick = function() {
+            send("cyan");
+        }
+    </script>
+</html>

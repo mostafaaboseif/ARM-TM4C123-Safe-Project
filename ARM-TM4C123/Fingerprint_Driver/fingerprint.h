@@ -10,10 +10,13 @@
  *
  *******************************************************************************/
 
-#include "../UART_Driver/uart.h"
-
 #ifndef FINGERPRINT_H_
 #define FINGERPRINT_H_
+
+/*******************************************************************************
+ *                                Includes                                     *
+ *******************************************************************************/
+#include "../UART_Driver/uart.h"
 
 /*******************************************************************************
  *                     Definitions and configurations                          *
@@ -21,11 +24,11 @@
 
 // Fingerprint configurations
 #define FINGERPRINT_UART_CHANNEL UART0
-#define FINGERPRINT_UART_Baudrate 57600
+#define FINGERPRINT_UART_BAUDRATE 57600
 
 // Packet head
-#define FINGERPRINT_PACKET_HEAD_H 0x40
-#define FINGERPRINT_PACKET_HEAD_L 0x40
+#define FINGERPRINT_PACKET_HEAD_H 0x4D
+#define FINGERPRINT_PACKET_HEAD_L 0x58
 
 // Packet flag
 #define FINGERPRINT_COMMAND_PACKET 0x10
@@ -59,6 +62,10 @@
 #define FINGERPRINT_FINGERPRINT_FOUND 0x39
 #define FINGERPRINT_FINGERPRINT_UNFOUND 0x3A
 
+// Boolean values
+#define FALSE 0
+#define TRUE 1
+
 /*******************************************************************************
  *                     Functions Declarations                                  *
  *******************************************************************************/
@@ -72,7 +79,9 @@ uint8_t FINGERPRINT_downloadFingerprintTemplate(uint16_t a_id);
 uint16_t FINGERPRINT_uploadFingerprintTemplate(uint16_t a_id);
 uint8_t FINGERPRINT_readIdNumber();
 uint8_t FINGERPRINT_readUserFlash(uint8_t a_numOfData, uint16_t a_address);
-uint8_t FINGERPRINT_writeUserFlash(uint8_t a_numOfData, uint16_t a_address, uint8_t *a_data, uint8_t a_arraySize);
+uint8_t FINGERPRINT_writeUserFlash(
+    uint8_t a_numOfData, uint16_t a_address,
+    uint8_t *a_data, uint8_t a_arraySize);
 uint8_t FINGERPRINT_readProductFlag();
 
-#endif
+#endif /* fingerprint.h */

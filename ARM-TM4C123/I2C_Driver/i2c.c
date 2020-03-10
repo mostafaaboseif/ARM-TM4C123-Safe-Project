@@ -1,6 +1,6 @@
 #include "i2c.h"
 
-void I2C_initMaster(volatile uint32_t i2cAddress, uint8_t mode){
+void I2C_initMaster(I2C i2cAddress, uint8_t mode){
 	switch(i2cAddress){
 		case I2C0:
 			(*SYSCTL_RCGCI2C) |= 0x01;
@@ -97,6 +97,7 @@ void I2C_writeByte(uint8_t data , uint8_t conditions){
 }
 
 void I2C_writeTransaction(char* data){
+	I2C_switchToWrite();
 	int i=0;
 	I2C_writeByte(data[i++],(1<<0)|(1<<1));  //send start bit
 	do
@@ -108,7 +109,25 @@ void I2C_writeTransaction(char* data){
 	I2C_writeByte(data[i],(1<<0)|(1<<2));  //send stop bit
 	for(int j =0 ; j<100 ; j++);
 }
-
+void I2C_receiveString(int nb ,char* data)
+{
+		I2C_switchToRead();
+		int i =0;
+		I2C1_MCS_R = 0b1011;  //start bit and run
+		while((I2C1_MCS_R & (1<<0)) != 0 );
+		data[i++]=I2C1_MDR_R;
+		
+	while(i<(nb-1)){
+		I2C1_MCS_R = 0b01001; 	//run
+		while((I2C1_MCS_R & (1<<0)) != 0 );
+		data[i++]=I2C1_MDR_R;
+	}
+		I2C1_MCS_R = 0b01101;		//stop bit and run
+		while((I2C1_MCS_R & (1<<0)) != 0 );
+		data[i++]=I2C1_MDR_R;
+		
+		data[i]=0; //add NULL to the end of the string
+}
 
 void I2C_switchToWrite(){
 		I2C1_MSA_R &= ~(1<<0);

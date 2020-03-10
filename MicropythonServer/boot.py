@@ -16,8 +16,8 @@ names = [name[0] for name in available]
 print("avialabe ssids : ")
 for name in names :
 	print("\t" + str(name))
-ssid = "HOME"#input("ssid : ")
-password = '1351968gamal2121' #input("password : ")
+ssid = "MGTMM"#input("ssid : ")
+password = '8111998alia' #input("password : ")
 station.connect(ssid,password)
 ip = 0
 for triels in range(30):

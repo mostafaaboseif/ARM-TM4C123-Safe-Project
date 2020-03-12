@@ -36,14 +36,14 @@ void I2C_initMaster(I2C i2cAddress, uint8_t mode);
 void I2C_setSlaveAddress(uint8_t address);
 
 void I2C_writeByte(uint8_t data , uint8_t conditions);
-void receiveString(int nb ,char* data);
-
-void I2C_sendChar(char x);
-void I2C_sendString(char* data);
-void I2C_switchToWrite();
-void I2C_switchToRead();
+void I2C_receiveString(int nb ,char* data);
+char I2C_readByte(int conditions);
 void I2C_writeTransaction(char* data);
 
+void I2C_switchToWrite();
+void I2C_switchToRead();
 
+void I2C_initSlave(int address);
+void I2C_setCallBackFn(void (*function)(char));
 
 #endif

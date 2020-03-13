@@ -26,23 +26,26 @@ typedef enum I2COffset{
 	 I2C_MCR  =  0x020
 } I2COffset;
 
+typedef enum I2C_CONFIG{
+	I2C_START_BIT 	= 0x00000002,
+	I2C_RUN				 	= 0x00000001,
+	I2C_STOP_BIT		= 0x00000004,
+}I2C_CONFIG;
+
 #define SYSCTL_PRI2C   ((volatile uint32_t*)0x400FEA20)
 #define SYSCTL_RCGCI2C ((volatile uint32_t*)0x400FE620)
 	
-#define Memory(X,Y)			(*((volatile uint32_t*)(((volatile uint32_t)X)+((volatile uint32_t)Y))))
+static void I2C_init(I2C i2c);
 
-void I2C_initMaster(I2C i2cAddress, uint8_t mode);
+void I2C_initMaster(I2C i2cAddress);
+void I2C_setSlaveAddress(I2C i2c, uint8_t address);
 
-void I2C_setSlaveAddress(uint8_t address);
+void I2C_writeByte(volatile I2C i2c, uint8_t data , I2C_CONFIG conditions);
+void I2C_receiveString(volatile I2C i2c, int nb ,char* data);
+char I2C_readByte(volatile I2C i2c, I2C_CONFIG conditions);
+void I2C_writeTransaction(volatile I2C i2c, char* data);
 
-void I2C_writeByte(uint8_t data , uint8_t conditions);
-void I2C_receiveString(int nb ,char* data);
-char I2C_readByte(int conditions);
-void I2C_writeTransaction(char* data);
-
-void I2C_switchToWrite();
-void I2C_switchToRead();
-
+// to be edited TODO
 void I2C_initSlave(int address);
 void I2C_setCallBackFn(void (*function)(char));
 

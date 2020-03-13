@@ -1,6 +1,6 @@
 #include "i2c.h"
 
-void I2C_initMaster(volatile uint32_t i2cAddress, uint8_t mode){
+void I2C_initMaster(I2C i2cAddress){
 	switch(i2cAddress){
 		case I2C0:
 			(*SYSCTL_RCGCI2C) |= 0x01;
@@ -63,67 +63,97 @@ void I2C_initMaster(volatile uint32_t i2cAddress, uint8_t mode){
 	
 	Memory(i2cAddress, I2C_MCR) = (1<<4);
 	Memory(i2cAddress, I2C_MTPR) = 7; //100KHz
-		
-	if(mode==0) Memory(i2cAddress, I2C_MSA)  &= ~(1<<0);  //transmit
-	else Memory(i2cAddress, I2C_MSA)  |= (1<<0);  //receive
-
 }
 
-void I2C_setSlaveAddress(uint8_t address){
-	I2C1_MSA_R |= (address<<1);
+
+void I2C_setSlaveAddress(I2C i2c, uint8_t address){
+	Memory(i2c,I2C_MSA) &= ~(0xFE);
+	Memory(i2c,I2C_MSA) |= (address<<1);
 }
 
-void I2C_sendChar(char x){
-	I2C1_MDR_R = x;
-	I2C1_MCS_R = 0x07;
-	while((I2C1_MCS_R & (1<<0)) != 0 );
-	for(int j =0 ; j<100 ; j++);
+
+void I2C_writeByte(volatile I2C i2c, uint8_t data , I2C_CONFIG conditions){
+		Memory(i2c, I2C_MSA) &= ~(1<<0);
+		Memory(i2c, I2C_MDR) = data;
+		Memory(i2c, I2C_MCS) = conditions;
+		while((Memory(i2c, I2C_MCS) & (1<<0)) != 0 );
 }
 
-void I2C_sendString(char* data){
-int i=0;
-	do
-	{
-		I2C_sendChar(data[i]);
-		i++;
-	}while(data[i]!=0);
-	I2C_sendChar('#');  //to mark the end of transaction
-}
- 
-void I2C_writeByte(uint8_t data , uint8_t conditions){
-		I2C1_MDR_R = data;
-		I2C1_MCS_R = conditions;
-		while((I2C1_MCS_R & (1<<0)) != 0 );
-}
-
-void I2C_writeTransaction(char* data){
+void I2C_writeTransaction(volatile I2C i2c, char* data){
+	Memory(i2c, I2C_MSA) &= ~(1<<0);
 	int i=0;
-	I2C_writeByte(data[i++],(1<<0)|(1<<1));  //send start bit
-	do
-	{
-		I2C_writeByte(data[i],(1<<0));  
+	I2C_writeByte(i2c, data[i++],I2C_START_BIT | I2C_RUN);  //send start bit
+	do{
+		I2C_writeByte(i2c, data[i],I2C_RUN);  
 		i++;
 	}while(data[i]!=0);
 	
-	I2C_writeByte(data[i],(1<<0)|(1<<2));  //send stop bit
+	I2C_writeByte(i2c, data[i],I2C_RUN | I2C_STOP_BIT);  //send stop bit
 	for(int j =0 ; j<100 ; j++);
 }
 
-
-void I2C_switchToWrite(){
-		I2C1_MSA_R &= ~(1<<0);
+char I2C_readByte(volatile I2C i2c, I2C_CONFIG conditions){
+	Memory(i2c,I2C_MSA) |= (1<<0);
+	Memory(i2c, I2C_MCS) = conditions;
+	while((Memory(i2c, I2C_MCS) & (1<<0)) != 0 );
+	return Memory(i2c, I2C_MDR);
 }
 
-void I2C_switchToRead(){
-	I2C1_MSA_R |= (1<<0);
+void I2C_receiveString(volatile I2C i2c, int nb ,char* data){
+		Memory(i2c,I2C_MSA) |= (1<<0);
+		int i =0;
+		Memory(i2c, I2C_MCS) = I2C_START_BIT | I2C_RUN;
+		while((Memory(i2c, I2C_MCS) & (1<<0)) != 0 );
+		data[i++] = Memory(i2c, I2C_MDR);
+		
+	while(i<(nb-1)){
+		Memory(i2c, I2C_MCS) = I2C_RUN; 	//run
+		while((Memory(i2c, I2C_MCS) & (1<<0)) != 0 );
+		data[i++]=Memory(i2c, I2C_MDR);
+	}
+		Memory(i2c, I2C_MCS) = I2C_STOP_BIT | I2C_RUN;		//stop bit and run
+		while((Memory(i2c, I2C_MCS) & (1<<0)) != 0 );
+		data[i++]=Memory(i2c, I2C_MDR);
+		data[i]=0; //add NULL to the end of the string
+}
+
+
+void I2C_initSlave(int address)
+{
+		(*SYSCTL_RCGCI2C) |= 0x02;
+		while(!((*SYSCTL_PRI2C)|= 0x02));			
+		GPIO_initPin(PORTA,PIN6,DIGITAL,PERIPHERAL); //SCL
+		GPIO_initPin(PORTA,PIN7,DIGITAL,PERIPHERAL); //SDA
+		GPIO_setPullup(PORTA,PIN6);
+		GPIO_setPullup(PORTA,PIN7);
+		GPIO_setOpenDrain(PORTA,PIN7);
+		GPIO_PORTA_PCTL_R &= ~(0xFF000000);
+		GPIO_PORTA_PCTL_R = (3<<28)|(3<<24);
+		
+		I2C1_MCR_R = (1<<5);
+		I2C1_SCSR_R = 0x01; 
+		I2C1_SOAR_R = address;
+		
+		I2C1_SICR_R |= 0x01;
+		I2C1_SIMR_R |= 0x01;
+		NVIC_EN1_R |= (1<<5);
+}
+void (*callBackFn)(char);
+void I2C_setCallBackFn(void (*function)(char))
+{
+	callBackFn = function;
+}
+char data;
+void I2C1_Handler()
+{
+	I2C1_SMIS_R &= ~(1<<0);
+	if(I2C1_SCSR_R & (1<<0))
+	{
+		data = I2C1_SDR_R;
+    callBackFn(data);
+	}
 }
 
 
 
 
-//to do :
-//resolve header file problem
-//send i2c number (recognize the port and pins automatically) in initcommunication , by base address and offset
-//may integrate initcomm with initmaster
-//PCTL problem
-//some #defines

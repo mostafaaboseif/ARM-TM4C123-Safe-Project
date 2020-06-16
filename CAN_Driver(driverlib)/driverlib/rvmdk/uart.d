@@ -1,0 +1,10 @@
+.\rvmdk\uart.o: uart.c
+.\rvmdk\uart.o: C:/Keil_v5/EE319Kware/inc/hw_ints.h
+.\rvmdk\uart.o: C:/Keil_v5/EE319Kware/inc/hw_memmap.h
+.\rvmdk\uart.o: C:/Keil_v5/EE319Kware/inc/hw_sysctl.h
+.\rvmdk\uart.o: C:/Keil_v5/EE319Kware/inc/hw_types.h
+.\rvmdk\uart.o: C:/Keil_v5/EE319Kware/inc/hw_uart.h
+.\rvmdk\uart.o: C:/Keil_v5/EE319Kware/driverlib/debug.h
+.\rvmdk\uart.o: C:/Keil_v5/EE319Kware/driverlib/interrupt.h
+.\rvmdk\uart.o: C:/Keil_v5/EE319Kware/driverlib/uart.h
+.\rvmdk\uart.o: C:/Keil_v5/EE319Kware/driverlib/sysctl.h

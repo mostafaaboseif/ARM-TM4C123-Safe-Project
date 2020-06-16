@@ -1,0 +1,15 @@
+.\rvmdk\simple_tx.o: C:\Users\mosta\Downloads\can\can_driver\simple_tx.c
+.\rvmdk\simple_tx.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\rvmdk\simple_tx.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\rvmdk\simple_tx.o: C:\Users\mosta\Downloads\can\can_driver\inc/hw_can.h
+.\rvmdk\simple_tx.o: C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h
+.\rvmdk\simple_tx.o: C:\Users\mosta\Downloads\can\can_driver\inc/hw_memmap.h
+.\rvmdk\simple_tx.o: C:\Users\mosta\Downloads\can\can_driver\driverlib/can.h
+.\rvmdk\simple_tx.o: C:\Users\mosta\Downloads\can\can_driver\driverlib/gpio.h
+.\rvmdk\simple_tx.o: C:\Users\mosta\Downloads\can\can_driver\driverlib/interrupt.h
+.\rvmdk\simple_tx.o: C:\Users\mosta\Downloads\can\can_driver\driverlib/pin_map.h
+.\rvmdk\simple_tx.o: C:\Users\mosta\Downloads\can\can_driver\driverlib/sysctl.h
+.\rvmdk\simple_tx.o: C:\Users\mosta\Downloads\can\can_driver\driverlib/uart.h
+.\rvmdk\simple_tx.o: C:\Users\mosta\Downloads\can\can_driver\utils/uartstdio.h
+.\rvmdk\simple_tx.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\rvmdk\simple_tx.o: C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h

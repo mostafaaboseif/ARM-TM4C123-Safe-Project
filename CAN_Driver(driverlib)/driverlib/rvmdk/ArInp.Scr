@@ -1,0 +1,27 @@
+--create .\rvmdk\driverlib.lib
+.\rvmdk\adc.o
+.\rvmdk\can.o
+.\rvmdk\can_osama.o
+.\rvmdk\simple_tx.o
+.\rvmdk\simple_rx.o
+.\rvmdk\comp.o
+.\rvmdk\cpu.o
+.\rvmdk\epi.o
+.\rvmdk\ethernet.o
+.\rvmdk\flash.o
+.\rvmdk\gpio.o
+.\rvmdk\hibernate.o
+.\rvmdk\i2c.o
+.\rvmdk\i2s.o
+.\rvmdk\interrupt.o
+.\rvmdk\mpu.o
+.\rvmdk\pwm.o
+.\rvmdk\qei.o
+.\rvmdk\ssi.o
+.\rvmdk\sysctl.o
+.\rvmdk\systick.o
+.\rvmdk\timer.o
+.\rvmdk\uart.o
+.\rvmdk\udma.o
+.\rvmdk\usb.o
+.\rvmdk\watchdog.o

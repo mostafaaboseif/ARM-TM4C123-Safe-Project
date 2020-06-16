@@ -1,0 +1,285 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.29.0.0
+Copyright (C) 2019 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Mostafa Amgad, asu, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.29.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 6 (build 750)
+Assembler:       Armasm.exe V5.06 update 6 (build 750)
+Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
+Library Manager: ArmAr.exe V5.06 update 6 (build 750)
+Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
+CPU DLL:         SARMCM3.DLL V5.29.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      lmidk-agdi.dll V???
+Dialog DLL:      TCM.DLL V1.36.5.0
+ 
+<h2>Project:</h2>
+C:\Keil_v5\EE319Kware\driverlib\driverlib.uvprojx
+Project File Date:  02/29/2020
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Rebuild target 'driverlib'
+compiling adc.c...
+compiling can.c...
+compiling simple_rx.c...
+compiling can_osama.c...
+C:\Users\mosta\Desktop\TivaWare_C_Series-2.1.4.178\examples\new prj\gpio.h(127): warning:  #1295-D: Deprecated declaration gpio_enable_Interrupts - give arg types
+  void 		gpio_enable_Interrupts();
+C:\Users\mosta\Desktop\TivaWare_C_Series-2.1.4.178\examples\new prj\i2c.h(31): warning:  #1295-D: Deprecated declaration I2C_initCommunication - give arg types
+  void I2C_initCommunication();
+C:\Users\mosta\Desktop\TivaWare_C_Series-2.1.4.178\examples\new prj\i2c.h(40): warning:  #1295-D: Deprecated declaration I2C_switchToWrite - give arg types
+  void I2C_switchToWrite();
+C:\Users\mosta\Desktop\TivaWare_C_Series-2.1.4.178\examples\new prj\i2c.h(41): warning:  #1295-D: Deprecated declaration I2C_switchToRead - give arg types
+  void I2C_switchToRead();
+C:\Users\mosta\Desktop\TivaWare_C_Series-2.1.4.178\examples\new prj\i2c.h(47): warning:  #1-D: last line of file ends without a newline
+  #endif
+C:\Users\mosta\Downloads\can\can_driver\can_osama.c(6): warning:  #177-D: variable "temp"  was declared but never referenced
+      int temp;
+C:\Users\mosta\Downloads\can\can_driver\can_osama.c(57): warning:  #177-D: variable "temp"  was declared but never referenced
+    char temp[10];
+C:\Users\mosta\Downloads\can\can_driver\can_osama.c(145): warning:  #223-D: function "UART_OutString" declared implicitly
+      UART_OutString("Sending Data: ");
+C:\Users\mosta\Downloads\can\can_driver\can_osama.c(148): warning:  #223-D: function "sprintf" declared implicitly
+          sprintf(temp,"%c",data[i]);
+C:\Users\mosta\Downloads\can\can_driver\can_osama.c(150): warning:  #223-D: function "UART_OutChar" declared implicitly
+          UART_OutChar(' ');
+C:\Users\mosta\Downloads\can\can_driver\can_osama.c(152): warning:  #223-D: function "UART_OutChar" declared implicitly
+      UART_OutChar('\n');
+C:\Users\mosta\Downloads\can\can_driver\can_osama.c(198): warning:  #223-D: function "UART_OutString" declared implicitly
+          UART_OutString("Message lost\n");
+C:\Users\mosta\Downloads\can\can_driver\can_osama.c(203): warning:  #223-D: function "UART_OutString" declared implicitly
+      UART_OutString("Received Message:");
+C:\Users\mosta\Downloads\can\can_driver\can_osama.c(205): warning:  #223-D: function "sprintf" declared implicitly
+      sprintf(temp,"%d", ((ArbReg1 & 0x1FFF)>>3));
+C:\Users\mosta\Downloads\can\can_driver\can_osama.c(218): warning:  #223-D: function "UART_OutChar" declared implicitly
+          UART_OutChar(' ');
+C:\Users\mosta\Downloads\can\can_driver\can_osama.c(220): warning:  #223-D: function "UART_OutChar" declared implicitly
+      UART_OutChar('\n');
+C:\Users\mosta\Downloads\can\can_driver\can_osama.c(221): warning:  #1166-D: returning pointer to local variable
+      return data;
+C:\Users\mosta\Downloads\can\can_driver\can_osama.c(222): warning:  #1-D: last line of file ends without a newline
+  }
+C:\Users\mosta\Downloads\can\can_driver\can_osama.c(160): warning:  #550-D: variable "ArbReg0"  was set but never used
+      int ArbReg0 = 0;
+C:\Users\mosta\Downloads\can\can_driver\can_osama.c(163): warning:  #550-D: variable "MaskReg0"  was set but never used
+      int MaskReg0 = 0;
+C:\Users\mosta\Downloads\can\can_driver\can_osama.c(164): warning:  #550-D: variable "MaskReg1"  was set but never used
+      int MaskReg1 = 0;
+C:\Users\mosta\Downloads\can\can_driver\can_osama.c: 21 warnings, 0 errors
+compiling comp.c...
+compiling cpu.c...
+compiling epi.c...
+compiling simple_tx.c...
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(48): warning:  #47-D: incompatible redefinition of macro "INT_GPIOA"  (declared at line 370 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_GPIOA               16          // GPIO Port A
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(49): warning:  #47-D: incompatible redefinition of macro "INT_GPIOB"  (declared at line 371 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_GPIOB               17          // GPIO Port B
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(50): warning:  #47-D: incompatible redefinition of macro "INT_GPIOC"  (declared at line 372 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_GPIOC               18          // GPIO Port C
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(51): warning:  #47-D: incompatible redefinition of macro "INT_GPIOD"  (declared at line 373 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_GPIOD               19          // GPIO Port D
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(52): warning:  #47-D: incompatible redefinition of macro "INT_GPIOE"  (declared at line 374 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_GPIOE               20          // GPIO Port E
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(53): warning:  #47-D: incompatible redefinition of macro "INT_UART0"  (declared at line 451 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_UART0               21          // UART0
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(54): warning:  #47-D: incompatible redefinition of macro "INT_UART1"  (declared at line 452 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_UART1               22          // UART1
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(55): warning:  #47-D: incompatible redefinition of macro "INT_SSI0"  (declared at line 428 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_SSI0                23          // SSI0
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(56): warning:  #47-D: incompatible redefinition of macro "INT_I2C0"  (declared at line 403 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_I2C0                24          // I2C0
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(57): warning:  #47-D: incompatible redefinition of macro "INT_PWM0_FAULT"  (declared at line 419 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_PWM0_FAULT          25          // PWM0 Fault
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(58): warning:  #47-D: incompatible redefinition of macro "INT_PWM0_0"  (declared at line 415 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_PWM0_0              26          // PWM0 Generator 0
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(59): warning:  #47-D: incompatible redefinition of macro "INT_PWM0_1"  (declared at line 416 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_PWM0_1              27          // PWM0 Generator 1
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(60): warning:  #47-D: incompatible redefinition of macro "INT_PWM0_2"  (declared at line 417 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_PWM0_2              28          // PWM0 Generator 2
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(61): warning:  #47-D: incompatible redefinition of macro "INT_QEI0"  (declared at line 425 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_QEI0                29          // QEI0
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(62): warning:  #47-D: incompatible redefinition of macro "INT_ADC0SS0"  (declared at line 352 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_ADC0SS0             30          // ADC0 Sequence 0
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(63): warning:  #47-D: incompatible redefinition of macro "INT_ADC0SS1"  (declared at line 353 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_ADC0SS1             31          // ADC0 Sequence 1
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(64): warning:  #47-D: incompatible redefinition of macro "INT_ADC0SS2"  (declared at line 354 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_ADC0SS2             32          // ADC0 Sequence 2
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(65): warning:  #47-D: incompatible redefinition of macro "INT_ADC0SS3"  (declared at line 355 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_ADC0SS3             33          // ADC0 Sequence 3
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(66): warning:  #47-D: incompatible redefinition of macro "INT_WATCHDOG"  (declared at line 462 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_WATCHDOG            34          // Watchdog Timers 0 and 1
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(67): warning:  #47-D: incompatible redefinition of macro "INT_TIMER0A"  (declared at line 435 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_TIMER0A             35          // 16/32-Bit Timer 0A
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(68): warning:  #47-D: incompatible redefinition of macro "INT_TIMER0B"  (declared at line 436 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_TIMER0B             36          // 16/32-Bit Timer 0B
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(69): warning:  #47-D: incompatible redefinition of macro "INT_TIMER1A"  (declared at line 437 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_TIMER1A             37          // 16/32-Bit Timer 1A
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(70): warning:  #47-D: incompatible redefinition of macro "INT_TIMER1B"  (declared at line 438 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_TIMER1B             38          // 16/32-Bit Timer 1B
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(71): warning:  #47-D: incompatible redefinition of macro "INT_TIMER2A"  (declared at line 439 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_TIMER2A             39          // 16/32-Bit Timer 2A
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(72): warning:  #47-D: incompatible redefinition of macro "INT_TIMER2B"  (declared at line 440 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_TIMER2B             40          // 16/32-Bit Timer 2B
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(73): warning:  #47-D: incompatible redefinition of macro "INT_COMP0"  (declared at line 363 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_COMP0               41          // Analog Comparator 0
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(74): warning:  #47-D: incompatible redefinition of macro "INT_COMP1"  (declared at line 364 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_COMP1               42          // Analog Comparator 1
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(75): warning:  #47-D: incompatible redefinition of macro "INT_SYSCTL"  (declared at line 432 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_SYSCTL              44          // System Control
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(76): warning:  #47-D: incompatible redefinition of macro "INT_FLASH"  (declared at line 369 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_FLASH               45          // Flash Memory Control and EEPROM
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(78): warning:  #47-D: incompatible redefinition of macro "INT_GPIOF"  (declared at line 375 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_GPIOF               46          // GPIO Port F
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(79): warning:  #47-D: incompatible redefinition of macro "INT_UART2"  (declared at line 453 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_UART2               49          // UART2
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(80): warning:  #47-D: incompatible redefinition of macro "INT_SSI1"  (declared at line 429 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_SSI1                50          // SSI1
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(81): warning:  #47-D: incompatible redefinition of macro "INT_TIMER3A"  (declared at line 441 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_TIMER3A             51          // 16/32-Bit Timer 3A
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(82): warning:  #47-D: incompatible redefinition of macro "INT_TIMER3B"  (declared at line 442 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_TIMER3B             52          // Timer 3B
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(83): warning:  #47-D: incompatible redefinition of macro "INT_I2C1"  (declared at line 404 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_I2C1                53          // I2C1
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(84): warning:  #47-D: incompatible redefinition of macro "INT_QEI1"  (declared at line 426 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_QEI1                54          // QEI1
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(85): warning:  #47-D: incompatible redefinition of macro "INT_CAN0"  (declared at line 361 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_CAN0                55          // CAN0
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(86): warning:  #47-D: incompatible redefinition of macro "INT_CAN1"  (declared at line 362 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_CAN1                56          // CAN1
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(87): warning:  #47-D: incompatible redefinition of macro "INT_HIBERNATE"  (declared at line 402 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_HIBERNATE           59          // Hibernation Module
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(88): warning:  #47-D: incompatible redefinition of macro "INT_USB0"  (declared at line 461 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_USB0                60          // USB
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(89): warning:  #47-D: incompatible redefinition of macro "INT_PWM0_3"  (declared at line 418 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_PWM0_3              61          // PWM Generator 3
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(90): warning:  #47-D: incompatible redefinition of macro "INT_UDMA"  (declared at line 459 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_UDMA                62          // uDMA Software
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(91): warning:  #47-D: incompatible redefinition of macro "INT_UDMAERR"  (declared at line 460 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_UDMAERR             63          // uDMA Error
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(92): warning:  #47-D: incompatible redefinition of macro "INT_ADC1SS0"  (declared at line 356 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_ADC1SS0             64          // ADC1 Sequence 0
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(93): warning:  #47-D: incompatible redefinition of macro "INT_ADC1SS1"  (declared at line 357 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_ADC1SS1             65          // ADC1 Sequence 1
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(94): warning:  #47-D: incompatible redefinition of macro "INT_ADC1SS2"  (declared at line 358 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_ADC1SS2             66          // ADC1 Sequence 2
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(95): warning:  #47-D: incompatible redefinition of macro "INT_ADC1SS3"  (declared at line 359 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_ADC1SS3             67          // ADC1 Sequence 3
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(96): warning:  #47-D: incompatible redefinition of macro "INT_SSI2"  (declared at line 430 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_SSI2                73          // SSI2
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(97): warning:  #47-D: incompatible redefinition of macro "INT_SSI3"  (declared at line 431 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_SSI3                74          // SSI3
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(98): warning:  #47-D: incompatible redefinition of macro "INT_UART3"  (declared at line 454 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_UART3               75          // UART3
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(99): warning:  #47-D: incompatible redefinition of macro "INT_UART4"  (declared at line 455 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_UART4               76          // UART4
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(100): warning:  #47-D: incompatible redefinition of macro "INT_UART5"  (declared at line 456 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_UART5               77          // UART5
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(101): warning:  #47-D: incompatible redefinition of macro "INT_UART6"  (declared at line 457 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_UART6               78          // UART6
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(102): warning:  #47-D: incompatible redefinition of macro "INT_UART7"  (declared at line 458 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_UART7               79          // UART7
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(103): warning:  #47-D: incompatible redefinition of macro "INT_I2C2"  (declared at line 405 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_I2C2                84          // I2C2
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(104): warning:  #47-D: incompatible redefinition of macro "INT_I2C3"  (declared at line 406 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_I2C3                85          // I2C3
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(105): warning:  #47-D: incompatible redefinition of macro "INT_TIMER4A"  (declared at line 443 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_TIMER4A             86          // 16/32-Bit Timer 4A
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(106): warning:  #47-D: incompatible redefinition of macro "INT_TIMER4B"  (declared at line 444 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_TIMER4B             87          // 16/32-Bit Timer 4B
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(107): warning:  #47-D: incompatible redefinition of macro "INT_TIMER5A"  (declared at line 445 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_TIMER5A             108         // 16/32-Bit Timer 5A
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(108): warning:  #47-D: incompatible redefinition of macro "INT_TIMER5B"  (declared at line 446 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_TIMER5B             109         // 16/32-Bit Timer 5B
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(109): warning:  #47-D: incompatible redefinition of macro "INT_WTIMER0A"  (declared at line 463 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_WTIMER0A            110         // 32/64-Bit Timer 0A
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(110): warning:  #47-D: incompatible redefinition of macro "INT_WTIMER0B"  (declared at line 464 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_WTIMER0B            111         // 32/64-Bit Timer 0B
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(111): warning:  #47-D: incompatible redefinition of macro "INT_WTIMER1A"  (declared at line 465 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_WTIMER1A            112         // 32/64-Bit Timer 1A
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(112): warning:  #47-D: incompatible redefinition of macro "INT_WTIMER1B"  (declared at line 466 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_WTIMER1B            113         // 32/64-Bit Timer 1B
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(113): warning:  #47-D: incompatible redefinition of macro "INT_WTIMER2A"  (declared at line 467 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_WTIMER2A            114         // 32/64-Bit Timer 2A
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(114): warning:  #47-D: incompatible redefinition of macro "INT_WTIMER2B"  (declared at line 468 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_WTIMER2B            115         // 32/64-Bit Timer 2B
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(115): warning:  #47-D: incompatible redefinition of macro "INT_WTIMER3A"  (declared at line 469 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_WTIMER3A            116         // 32/64-Bit Timer 3A
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(116): warning:  #47-D: incompatible redefinition of macro "INT_WTIMER3B"  (declared at line 470 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_WTIMER3B            117         // 32/64-Bit Timer 3B
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(117): warning:  #47-D: incompatible redefinition of macro "INT_WTIMER4A"  (declared at line 471 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_WTIMER4A            118         // 32/64-Bit Timer 4A
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(118): warning:  #47-D: incompatible redefinition of macro "INT_WTIMER4B"  (declared at line 472 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_WTIMER4B            119         // 32/64-Bit Timer 4B
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(119): warning:  #47-D: incompatible redefinition of macro "INT_WTIMER5A"  (declared at line 473 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_WTIMER5A            120         // 32/64-Bit Timer 5A
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(120): warning:  #47-D: incompatible redefinition of macro "INT_WTIMER5B"  (declared at line 474 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_WTIMER5B            121         // 32/64-Bit Timer 5B
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(121): warning:  #47-D: incompatible redefinition of macro "INT_SYSEXC"  (declared at line 433 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_SYSEXC              122         // System Exception (imprecise)
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(122): warning:  #47-D: incompatible redefinition of macro "INT_PWM1_0"  (declared at line 420 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_PWM1_0              150         // PWM1 Generator 0
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(123): warning:  #47-D: incompatible redefinition of macro "INT_PWM1_1"  (declared at line 421 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_PWM1_1              151         // PWM1 Generator 1
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(124): warning:  #47-D: incompatible redefinition of macro "INT_PWM1_2"  (declared at line 422 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_PWM1_2              152         // PWM1 Generator 2
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(125): warning:  #47-D: incompatible redefinition of macro "INT_PWM1_3"  (declared at line 423 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_PWM1_3              153         // PWM1 Generator 3
+C:\Users\mosta\Downloads\can\can_driver\tm4c123gh6pm.h(126): warning:  #47-D: incompatible redefinition of macro "INT_PWM1_FAULT"  (declared at line 424 of "C:\Users\mosta\Downloads\can\can_driver\inc/hw_ints.h")
+  #define INT_PWM1_FAULT          154         // PWM1 Fault
+C:\Users\mosta\Downloads\can\can_driver\simple_tx.c(427): warning:  #111-D: statement is unreachable
+      return(0);
+C:\Users\mosta\Downloads\can\can_driver\simple_tx.c: 79 warnings, 0 errors
+compiling ethernet.c...
+compiling flash.c...
+compiling hibernate.c...
+compiling i2c.c...
+compiling gpio.c...
+compiling interrupt.c...
+compiling i2s.c...
+compiling mpu.c...
+compiling qei.c...
+compiling ssi.c...
+compiling pwm.c...
+compiling systick.c...
+compiling timer.c...
+compiling sysctl.c...
+compiling uart.c...
+compiling udma.c...
+compiling watchdog.c...
+compiling usb.c...
+creating Library...
+".\rvmdk\driverlib.lib" - 0 Error(s), 100 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.6.0.pack
+                ARM.CMSIS.5.6.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.3.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.TM4C_DFP.1.1.0.pack
+                Keil.TM4C_DFP.1.1.0
+                Texas Instruments Tiva C Series Device Support and Examples
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_driverlib
+  C:\Users\mosta\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include
+  C:\Users\mosta\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.3.0
+Build Time Elapsed:  00:00:04
+</pre>
+</body>
+</html>

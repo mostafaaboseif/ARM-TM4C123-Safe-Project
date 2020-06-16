@@ -1,0 +1,131 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.29.0.0
+Copyright (C) 2019 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Mostafa Amgad, asu, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.29.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 6 (build 750)
+Assembler:       Armasm.exe V5.06 update 6 (build 750)
+Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
+Library Manager: ArmAr.exe V5.06 update 6 (build 750)
+Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
+CPU DLL:         SARMCM3.DLL V5.29.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      UL2CM3.DLL V1.163.0.0
+Dialog DLL:      TCM.DLL V1.36.5.0
+ 
+<h2>Project:</h2>
+D:\aaaaaaaaaaaaaaaaaaaaaaaaa\CAN_driver.uvprojx
+Project File Date:  06/15/2020
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Rebuild target 'Target 1'
+compiling interrupt.c...
+driverlib\interrupt.c(138): warning:  #940-D: missing return statement at end of non-void function "IntMasterEnable" 
+  }
+driverlib\interrupt.c(165): warning:  #940-D: missing return statement at end of non-void function "IntMasterDisable" 
+  }
+driverlib\interrupt.c: 2 warnings, 0 errors
+compiling main.c...
+C:\Users\mosta\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm4.h(1546): warning:  #47-D: incompatible redefinition of macro "ITM_BASE"  (declared at line 87 of "inc/hw_memmap.h")
+  #define ITM_BASE            (0xE0000000UL)                            /*!< ITM Base Address */
+C:\Users\mosta\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm4.h(1547): warning:  #47-D: incompatible redefinition of macro "DWT_BASE"  (declared at line 88 of "inc/hw_memmap.h")
+  #define DWT_BASE            (0xE0001000UL)                            /*!< DWT Base Address */
+C:\Users\mosta\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm4.h(1551): warning:  #47-D: incompatible redefinition of macro "NVIC_BASE"  (declared at line 90 of "inc/hw_memmap.h")
+  #define NVIC_BASE           (SCS_BASE +  0x0100UL)                    /*!< NVIC Base Address */
+C:\Users\mosta\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h(1543): warning:  #47-D: incompatible redefinition of macro "WATCHDOG0_BASE"  (declared at line 36 of "inc/hw_memmap.h")
+  #define WATCHDOG0_BASE                  0x40000000UL
+C:\Users\mosta\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h(1544): warning:  #47-D: incompatible redefinition of macro "WATCHDOG1_BASE"  (declared at line 37 of "inc/hw_memmap.h")
+  #define WATCHDOG1_BASE                  0x40001000UL
+C:\Users\mosta\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h(1549): warning:  #47-D: incompatible redefinition of macro "SSI0_BASE"  (declared at line 42 of "inc/hw_memmap.h")
+  #define SSI0_BASE                       0x40008000UL
+C:\Users\mosta\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h(1550): warning:  #47-D: incompatible redefinition of macro "SSI1_BASE"  (declared at line 43 of "inc/hw_memmap.h")
+  #define SSI1_BASE                       0x40009000UL
+C:\Users\mosta\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h(1553): warning:  #47-D: incompatible redefinition of macro "UART0_BASE"  (declared at line 44 of "inc/hw_memmap.h")
+  #define UART0_BASE                      0x4000C000UL
+C:\Users\mosta\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h(1554): warning:  #47-D: incompatible redefinition of macro "UART1_BASE"  (declared at line 45 of "inc/hw_memmap.h")
+  #define UART1_BASE                      0x4000D000UL
+C:\Users\mosta\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h(1555): warning:  #47-D: incompatible redefinition of macro "UART2_BASE"  (declared at line 46 of "inc/hw_memmap.h")
+  #define UART2_BASE                      0x4000E000UL
+C:\Users\mosta\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h(1569): warning:  #47-D: incompatible redefinition of macro "QEI0_BASE"  (declared at line 56 of "inc/hw_memmap.h")
+  #define QEI0_BASE                       0x4002C000UL
+C:\Users\mosta\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h(1570): warning:  #47-D: incompatible redefinition of macro "QEI1_BASE"  (declared at line 57 of "inc/hw_memmap.h")
+  #define QEI1_BASE                       0x4002D000UL
+C:\Users\mosta\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h(1571): warning:  #47-D: incompatible redefinition of macro "TIMER0_BASE"  (declared at line 58 of "inc/hw_memmap.h")
+  #define TIMER0_BASE                     0x40030000UL
+C:\Users\mosta\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h(1572): warning:  #47-D: incompatible redefinition of macro "TIMER1_BASE"  (declared at line 59 of "inc/hw_memmap.h")
+  #define TIMER1_BASE                     0x40031000UL
+C:\Users\mosta\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h(1573): warning:  #47-D: incompatible redefinition of macro "TIMER2_BASE"  (declared at line 60 of "inc/hw_memmap.h")
+  #define TIMER2_BASE                     0x40032000UL
+C:\Users\mosta\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h(1574): warning:  #47-D: incompatible redefinition of macro "TIMER3_BASE"  (declared at line 61 of "inc/hw_memmap.h")
+  #define TIMER3_BASE                     0x40033000UL
+C:\Users\mosta\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h(1579): warning:  #47-D: incompatible redefinition of macro "ADC0_BASE"  (declared at line 62 of "inc/hw_memmap.h")
+  #define ADC0_BASE                       0x40038000UL
+C:\Users\mosta\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h(1580): warning:  #47-D: incompatible redefinition of macro "ADC1_BASE"  (declared at line 63 of "inc/hw_memmap.h")
+  #define ADC1_BASE                       0x40039000UL
+C:\Users\mosta\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h(1581): warning:  #47-D: incompatible redefinition of macro "COMP_BASE"  (declared at line 64 of "inc/hw_memmap.h")
+  #define COMP_BASE                       0x4003C000UL
+C:\Users\mosta\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h(1582): warning:  #47-D: incompatible redefinition of macro "CAN0_BASE"  (declared at line 66 of "inc/hw_memmap.h")
+  #define CAN0_BASE                       0x40040000UL
+C:\Users\mosta\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h(1583): warning:  #47-D: incompatible redefinition of macro "CAN1_BASE"  (declared at line 67 of "inc/hw_memmap.h")
+  #define CAN1_BASE                       0x40041000UL
+C:\Users\mosta\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h(1588): warning:  #47-D: incompatible redefinition of macro "USB0_BASE"  (declared at line 71 of "inc/hw_memmap.h")
+  #define USB0_BASE                       0x40050000UL
+C:\Users\mosta\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h(1597): warning:  #47-D: incompatible redefinition of macro "HIB_BASE"  (declared at line 83 of "inc/hw_memmap.h")
+  #define HIB_BASE                        0x400FC000UL
+C:\Users\mosta\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h(1598): warning:  #47-D: incompatible redefinition of macro "FLASH_CTRL_BASE"  (declared at line 84 of "inc/hw_memmap.h")
+  #define FLASH_CTRL_BASE                 0x400FD000UL
+C:\Users\mosta\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h(1599): warning:  #47-D: incompatible redefinition of macro "SYSCTL_BASE"  (declared at line 85 of "inc/hw_memmap.h")
+  #define SYSCTL_BASE                     0x400FE000UL
+C:\Users\mosta\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h(1600): warning:  #47-D: incompatible redefinition of macro "UDMA_BASE"  (declared at line 86 of "inc/hw_memmap.h")
+  #define UDMA_BASE                       0x400FF000UL
+main.c(381): warning:  #111-D: statement is unreachable
+      return(0);
+main.c: 27 warnings, 0 errors
+compiling sysctl.c...
+compiling gpio.c...
+assembling startup_TM4C123.s...
+compiling can.c...
+compiling system_TM4C123.c...
+linking...
+Program Size: Code=3428 RO-data=900 RW-data=8 ZI-data=608  
+".\Objects\CAN_driver.axf" - 0 Error(s), 29 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.6.0.pack
+                ARM.CMSIS.5.6.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.3.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.TM4C_DFP.1.1.0.pack
+                Keil.TM4C_DFP.1.1.0
+                Texas Instruments Tiva C Series Device Support and Examples
+   * Component: Startup Version: 1.0.1
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_Target_1
+  C:\Users\mosta\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include
+  C:\Users\mosta\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.3.0
+
+   * Component: Keil::Device:Startup:1.0.1
+      Include file:  Device\Include\TM4C123\TM4C123.h
+      Source file:   Device\Source\ARM\startup_TM4C123.s
+      Source file:   Device\Source\system_TM4C123.c
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>

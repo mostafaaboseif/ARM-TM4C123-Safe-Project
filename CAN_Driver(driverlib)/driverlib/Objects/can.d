@@ -1,0 +1,9 @@
+.\objects\can.o: can.c
+.\objects\can.o: C:/Keil_v5/EE319Kware/inc/hw_can.h
+.\objects\can.o: C:/Keil_v5/EE319Kware/inc/hw_ints.h
+.\objects\can.o: C:/Keil_v5/EE319Kware/inc/hw_nvic.h
+.\objects\can.o: C:/Keil_v5/EE319Kware/inc/hw_memmap.h
+.\objects\can.o: C:/Keil_v5/EE319Kware/inc/hw_types.h
+.\objects\can.o: C:/Keil_v5/EE319Kware/driverlib/can.h
+.\objects\can.o: C:/Keil_v5/EE319Kware/driverlib/debug.h
+.\objects\can.o: C:/Keil_v5/EE319Kware/driverlib/interrupt.h
